@@ -2,7 +2,7 @@ package models;
 
 import java.util.Objects;
 
-public class Department {
+public class  Department {
     private  String department;
     private String description;
     private int number_employees;
