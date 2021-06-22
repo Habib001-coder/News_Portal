@@ -14,6 +14,9 @@
 
 * postman
 
+## Discription
+This is a News API where one can add news, departments and even employers.
+
 
 ## Support and contact details
 If you come across any problems you can reach me at: abdallah.abdul@student.moringaschool.com
