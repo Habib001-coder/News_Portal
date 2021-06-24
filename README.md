@@ -37,6 +37,22 @@ address VARCHAR
 );
 * CREATE DATABASE newsapi_test WITH TEMPLATE newsapi;
 
+## End points
+| URL                                            | HTTP Verb   |                                 DESCRIPTION|
+|--                                              |  ---        |                                   ---      |
+|/users                                          |get          |     Get staff                              |
+|/departments                                    |get          |     Get departments                        |
+|/news/general                                   |get          |      get all news                          |
+|/user/:id/departments                           |get          |      get users in a department             |
+|/departments/:id/user                           |get          |     get depertments users                  |
+|/depertment/:id                                 |get          |     get depertment using id                |
+|/users/:id                                      | get         |     get users using id                     |
+|/users/new                                      |post         |     add a new user                         |
+|/departments/new                                |post         |     add a new department                   |
+|/news/new/general                               |post         |     add news                               |
+|/news/new/department                            |post         |    add news in department                  |
+|/department/:id                                 |post         |    add department and give it an id        |
+|/users/:id                                      |post         |    add user and give it an id              |
 
 
 
