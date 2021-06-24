@@ -37,13 +37,27 @@ address VARCHAR
 );
 * CREATE DATABASE newsapi_test WITH TEMPLATE newsapi;
 
+## End points
 
+| URL                                            | HTTP Verb   |                                 DESCRIPTION|
+|--                                              |  ---        |                                   ---      |
+|/department/new                                 |post         |     Add new departments                    |
+|/department                                     |get          |   View all departments                     |
+|/department/:id/news/new                        |post         |   add news to department                   |
+|/news/new                                       |post           add news                                   |
+|/news                                           |get          |          view news|
+|/departments/:id/depNews                        |get          |      view all news in the department       |
+|/employees/new                                  |post         |     add an employee                        |
+|/employees                                      |get          |     view all employees                     |
+|employees/employeeId/department/:departmentId   |post         |       add department to user               |
+|/employees/:employeeId/department               |get          |     iew all department that user belongs to|
+|/new/department                                 | get         |      department new                        |
 
 
 
 ## Technologies Used
 * Java
-* Heroku
+* hbs
 * postman
 
 ## Discription

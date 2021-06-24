@@ -95,7 +95,7 @@ public class App {
         });
 
         //Get: View all users
-        get("/users", "application/json", (request, response) -> {
+        get("/employees", "application/json", (request, response) -> {
             return gson.toJson(employeesDao.getAllEmployees());
         });
 
