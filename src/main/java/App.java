@@ -40,7 +40,7 @@ public class App {
         employeesDao = new Sql2oEmployeesDao(sql2o);
         conn = sql2o.open();
 
-        //post:Add department
+        //post:Add department sawa
         post("/department/new","application/json",(request, response) -> {
             Department department = gson.fromJson(request.body(), Department.class);
             departmentDao.add(department);
@@ -50,11 +50,11 @@ public class App {
             return gson.toJson(departmentDao.getAll());
         });
 
-        //get:view all departments
+        //get:view all departments sawa
         get("/department","application/json",(request, response) -> {
             return gson.toJson(departmentDao.getAll());
         });
-        //post: Add news to department
+        //post: Add news to department sawa
         post("/department/:id/news/new","application/json",(request, response) -> {
             int id = Integer.parseInt(request.params("id"));
             News news = gson.fromJson(request.body(),News.class);
@@ -64,7 +64,7 @@ public class App {
             response.status(201);
             return gson.toJson(news);
         });
-        //post: Add news
+        //post: Add news sawa
         post("/news/new","application/json",(request, response) -> {
             News news = gson.fromJson(request.body(), News.class);
             newsDao.add(news);
@@ -79,13 +79,13 @@ public class App {
             return gson.toJson(newsDao.getAllNews());
         });
 
-        //get:View all news for department
+        //get:View all news for department sawa
         get("/departments/:id/depNews", "application/json", (request, response) -> {
             int id = Integer.parseInt(request.params("id"));
             return gson.toJson(newsDao.getAllNews());
         });
 
-        //post:add a user(employees)
+        //post:add a user(employees) sawa
         post("/employees/new", "application/json", (request, response) -> {
             Employees employees = gson.fromJson(request.body(), Employees.class);
             employeesDao.add(employees);
@@ -94,43 +94,43 @@ public class App {
             return gson.toJson(employees);
         });
 
-        //Get: View all users
+        //Get: View all users sawa
         get("/employees", "application/json", (request, response) -> {
             return gson.toJson(employeesDao.getAllEmployees());
         });
 
         //post:Add a department to a user
-        post("employees/employeeId/department/:departmentId","application/json",(request, response) -> {
-            int emplyeeId = Integer.parseInt(request.params("employeeId"));
-            int departmentId = Integer.parseInt(request.params("departmentId"));
-            Employees employeesFound = employeesDao.findById(emplyeeId);
-            Department departmentfound = departmentDao.findById(departmentId);
-
-            if (departmentfound != null && employeesFound != null){
-                departmentDao.addDepartmentToEmployees(departmentfound,employeesFound);
-                response.type("application/json");
-                response.status(201);
-                return gson.toJson("Employees and Department have been associated");
-            }
-            else {
-                throw new ApiException(404, "Employee or Department does not exist");
-            }
-        });
-
-        //get:View all departments a user belongs to
-
-        get("/employees/:employeeId/department","application/json",(request, response) -> {
-            int employeeId = Integer.parseInt(request.params("employeeId"));
-            Employees employees = employeesDao.findById(employeeId);
-
-            if (employees == null){
-                throw new Exception("No Employee with that id");
-            }else if(employeesDao.getAllDepartmentsForEmployee(employeeId).size() == 0){
-                return "{\"message\":\"Employee not associated with any department\"}";
-            }else {
-                return gson.toJson(employeesDao.getAllDepartmentsForEmployee(employeeId));
-            }
-        });
+//        post("employees/employeeId/department/:departmentId","application/json",(request, response) -> {
+//            int emplyeeId = Integer.parseInt(request.params("employeeId"));
+//            int departmentId = Integer.parseInt(request.params("departmentId"));
+//            Employees employeesFound = employeesDao.findById(emplyeeId);
+//            Department departmentfound = departmentDao.findById(departmentId);
+//
+//            if (departmentfound != null && employeesFound != null){
+//                departmentDao.addDepartmentToEmployees(departmentfound,employeesFound);
+//                response.type("application/json");
+//                response.status(201);
+//                return gson.toJson("Employees and Department have been associated");
+//            }
+//            else {
+//                throw new ApiException(404, "Employee or Department does not exist");
+//            }
+//        });
+//
+//        //get:View all departments a user belongs to
+//
+//        get("/employees/:employeeId/department","application/json",(request, response) -> {
+//            int employeeId = Integer.parseInt(request.params("employeeId"));
+//            Employees employees = employeesDao.findById(employeeId);
+//
+//            if (employees == null){
+//                throw new Exception("No Employee with that id");
+//            }else if(employeesDao.getAllDepartmentsForEmployee(employeeId).size() == 0){
+//                return "{\"message\":\"Employee not associated with any department\"}";
+//            }else {
+//                return gson.toJson(employeesDao.getAllDepartmentsForEmployee(employeeId));
+//            }
+//        });
 
         exception(ApiException.class, (exception, request, response) -> {
             ApiException err = exception;
