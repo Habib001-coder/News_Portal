@@ -35,7 +35,7 @@ address VARCHAR
  description VARCHAR,
  number_employees INT
 );
-/
+* CREATE DATABASE newsapi_test WITH TEMPLATE newsapi;
 
 
 
