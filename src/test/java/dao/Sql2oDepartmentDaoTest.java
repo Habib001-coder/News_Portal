@@ -59,31 +59,6 @@ public class Sql2oDepartmentDaoTest {
         assertTrue(departmentDao.getAll().contains(department));
         assertTrue(departmentDao.getAll().contains(department1));
     }
-    @Test
-    public void  addDepartmentToEmployees() {
-        Department department = setupDepartment();
-        departmentDao.add(department);
-        Employees employees = new Employees("jane", "nurse", "patient-care","123-Nairobi");
-        employeesDao.add(employees);
-        Employees employees1 = new Employees("jane", "nurse", "patient-care","123-Nairobi");
-        employeesDao.add(employees1);
-        departmentDao.addDepartmentToEmployees(department,employees);
-        departmentDao.addDepartmentToEmployees(department,employees1);
-        Employees[] addDeptToEmployee = {employees,employees1};
-        assertEquals(Arrays.asList(addDeptToEmployee),departmentDao.getAllEmployeesForADepartment(department.getId()));
-    }
-
-    @Test
-    public void clearAll() {
-        Department department = setupDepartment();
-        departmentDao.add(department);
-        departmentDao.clearAll();
-        assertEquals(0,departmentDao.getAll().size());
-    }
-    @Test
-    public void getAllNews() {
-
-    }
 
 
 
