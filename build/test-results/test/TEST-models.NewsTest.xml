@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="models.NewsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-06-24T19:13:09" hostname="moringa-ThinkPad-X250" time="0.005">
+  <properties/>
+  <testcase name="NewsInstantiatesCorrectlyWith_Values" classname="models.NewsTest" time="0.001"/>
+  <testcase name="NewsInstantiatesCorrectly" classname="models.NewsTest" time="0.0"/>
+  <testcase name="setId" classname="models.NewsTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

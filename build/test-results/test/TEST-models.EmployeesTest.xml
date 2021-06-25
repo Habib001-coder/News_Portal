@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="models.EmployeesTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-06-24T19:13:09" hostname="moringa-ThinkPad-X250" time="0.007">
+  <properties/>
+  <testcase name="setId" classname="models.EmployeesTest" time="0.002"/>
+  <testcase name="EmployeesInstantiatesCorrectly_true" classname="models.EmployeesTest" time="0.0"/>
+  <testcase name="EmployeesInstantiatesCorrectlyWith_Values" classname="models.EmployeesTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
