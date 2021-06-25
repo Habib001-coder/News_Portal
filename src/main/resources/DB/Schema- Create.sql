@@ -1,4 +1,3 @@
-
 CREATE DATABASE newsapi;
 SET MODE PostgreSQL;
 
